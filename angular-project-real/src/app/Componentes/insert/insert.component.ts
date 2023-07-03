@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Srv1Service, Dato } from '../../Servicios/srv1.service';
+import { Srv1Service, Empleado } from '../../Servicios/srv1.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class InsertComponent implements OnInit {
 
-  datos: Dato={
-    id_tipo_piedra:'',
-    nombre_piedra:'',
+  datos: Empleado = {
+    Rut: '',
+    Nombre: '',
+    Apellido: '',
+    Direccion: '',
+    Telefono: '',
+    Sueldo: '',
+    Antiguedad: '',
+    Tipo_trabajo: ''
   };
 
   constructor( private Srv1Service:Srv1Service, private Router:Router) { }

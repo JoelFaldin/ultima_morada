@@ -1,28 +1,38 @@
 <h1>Datos</h1>
 <br>
 
-<!-- <button type="button" class="btn btn-dark">Añadir</button> -->
-
 <table class="table">
     <thead>
       <tr>
-        <th scope="id">Id</th>
+        <th scope="id">RUT</th>
         <th scope="nombre">Nombre</th>
+        <th scope="nombre">Apellido</th>
+        <th scope="nombre">Direccion</th>
+        <th scope="nombre">Telefono</th>
+        <th scope="nombre">Sueldo</th>
+        <th scope="nombre">Antiguedad</th>
+        <th scope="nombre">Tipo_trabajo</th>
         <th scope="editar">Accion</th>
         <th scope="borrar">Borrar</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let dato of ListarDato">
+      <tr *ngFor="let dato of ListarEmpleado">
         <!-- Para cambiar los datos, 1ero ir a srv1.service.ts y cambiar los nombres de las columnas desde ahi. -->
         <!-- Luego cambiar aca abajo. -->
-        <td>{{dato.id_tipo_piedra}}</td>
-        <td>{{dato.nombre_piedra}}</td>
+        <td>{{dato.Rut}}</td>
+        <td>{{dato.Nombre}}</td>
+        <td>{{dato.Apellido}}</td>
+        <td>{{dato.Direccion}}</td>
+        <td>{{dato.Telefono}}</td>
+        <td>{{dato.Sueldo}}</td>
+        <td>{{dato.Antiguedad}}</td>
+        <td>{{dato.Tipo_trabajo}}</td>
         <td>
-            <button (click)="update(dato.id_tipo_piedra)" type="button" class="btn btn-primary">Actualizar</button>
+            <button (click)="update(dato.Rut)" type="button" class="btn btn-primary">Actualizar</button>
         </td>
         <td>
-            <button (click)="eliminar(dato.id_tipo_piedra)" type="button" class="btn btn-danger">Borrar</button>
+            <button (click)="eliminar(dato.Rut)" type="button" class="btn btn-danger">Borrar</button>
         </td>
       </tr>
     </tbody>

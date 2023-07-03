@@ -1,13 +1,13 @@
-require('./conexion');
-const bodyParser = require('body-parser');
+// import { conexion } from './conexion';
+import * as bodyParser from 'body-parser';
 
-const express = require('express');
+import express from 'express';
+
 const port = (process.env.port || 3000); //Recupera el puerto donde esta trabajando el servidor
 
 //Configurar el express
 const app = express();
 app.use(bodyParser.json());
-
 
 //Configurar puerto:
 app.set('port', port);
@@ -24,7 +24,7 @@ app.get('/api', (req, res) => {
 });
 
 //Iniciar express:
-app.listen(port, (error) => {
+app.listen(port, (error?: Error) => {
     if (error) {
         console.log('Hubo un error al iniciar el servidor :(');
     } else {

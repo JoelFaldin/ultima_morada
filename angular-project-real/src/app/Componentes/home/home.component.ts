@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Srv1Service, Dato } from '../../Servicios/srv1.service';
+import { Srv1Service, Empleado } from '../../Servicios/srv1.service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class HomeComponent implements OnInit {
 
-  ListarDato: Dato[] = [];
+  ListarEmpleado: Empleado[] = [];
 
   constructor(private Srv1Service:Srv1Service, private router:Router) { }
 
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.Srv1Service.getDatos().subscribe(
       res => {
         console.log(res)
-        this.ListarDato = <any> res;
+        this.ListarEmpleado = <any> res;
       },
       err => console.log(err)
     )
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   eliminar(id: string) {
     this.Srv1Service.deleteDato(id).subscribe(
       res => {
-        console.log("Dato eliminado!!!")
+        console.log("Empleado eliminado!!!")
         this.listarDatos();
       },
       err => {

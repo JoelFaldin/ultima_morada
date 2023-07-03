@@ -1,19 +1,46 @@
+
 <div class="container">
-    <p>Actualizar Datos</p>
+    <p>Actualizar Empleado</p>
     <div class="row">
         <div class="col-sm-6">
             <form>
-                <div class="mb3">
-                    <label class="form-label">Nuevo ID:</label>
-                    <input [(ngModel)]="datos.id_tipo_piedra" type="text" class="form-control" name="id_tipo_piedra">
+
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input [(ngModel)]="datos.Nombre" type="text" class="form-control" name="Nombre">
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nuevo nombre:</label>
-                    <input [(ngModel)]="datos.nombre_piedra" type="text" class="form-control" name="nombre_piedra">
+                    <label class="form-label">Apellido</label>
+                    <input [(ngModel)]="datos.Apellido" type="text" class="form-control" name="Apellido">
                 </div>
 
-                <button (click)="update()" class="btn btn-primary">Finalizar</button>
+                <div class="mb-3">
+                    <label class="form-label">Direccion</label>
+                    <input [(ngModel)]="datos.Direccion" type="text" class="form-control" name="Direccion">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Telefono</label>
+                    <input [(ngModel)]="datos.Telefono" type="text" class="form-control" name="Telefono">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Sueldo</label>
+                    <input [(ngModel)]="datos.Sueldo" type="text" class="form-control" name="Sueldo">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Antiguedad</label>
+                    <input [(ngModel)]="datos.Antiguedad" type="text" class="form-control" name="Antiguedad">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Tipo_trabajo</label>
+                    <input [(ngModel)]="datos.Tipo_trabajo" type="text" class="form-control" name="Tipo_trabajo">
+                </div>
+
+                <button (click)="update1()" class="btn btn-primary">Actualizar</button>
             </form>
         </div>
     </div>
