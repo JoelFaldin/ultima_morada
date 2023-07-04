@@ -9,7 +9,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UpdateComponent implements OnInit {
 
-  test: string = "hello";
   datos: Empleado = {
     Rut: '',
     Nombre: '',
@@ -26,23 +25,16 @@ export class UpdateComponent implements OnInit {
                private activeRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
-    const id_entrada = <string> this.activeRoute.snapshot.params['id'];
-    console.log('id de entrada: ' + id_entrada);
-    if (id_entrada) {
-      this.Srv1Service.getDato(id_entrada).subscribe(
-        res => {
-          this.datos = res as Empleado;
-          console.log(res);
-        },
-        err => {
-          console.log(err);
-        }
-      );
-    }
+  // El codigo que iba aca me obstaculizaba la obtencion de datos en rutas. ts
+  // const rut_entrada = <string> this.activeRoute.snapshot.params['id'];
+  // console.log("Rut de entrada: " + rut_entrada);
+
 }
 
   update1() {
-    this.Srv1Service.editDato(this.datos).subscribe();
+    const rut_entrada = <string> this.activeRoute.snapshot.params['id'];
+    console.log("Rut de entrada: " + rut_entrada);
+    this.Srv1Service.editDato(rut_entrada, this.datos).subscribe();
     this.Router.navigate(['/home']);
   }
 

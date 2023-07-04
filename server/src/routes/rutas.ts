@@ -4,7 +4,7 @@ import conexion from '../conexion';
 import * as mysql from 'mysql';
 
 //Asignar todas las rutas (y peticiones de cliente):
-//Cada router.get() equivale a una query de mysql
+//Cada router.?() equivale a una query de mysql
 //---------------------------------------------------
 
 //Listar todos los empleados (READ):
@@ -56,9 +56,12 @@ router.delete('/:RUT', (req, res) => {
 })
 
 // Modificar un dato de la tabla empelado (UPDATE):
-router.post('/Rut', (req, res) => {
-    const { Rut, Nombre, Apellido, Direccion, Telefono, Sueldo, Antiguedad, Tipo_trabajo } = req.body
+router.put('/', (req, res) => {
+    const { Nombre, Apellido, Direccion, Telefono, Sueldo, Antiguedad, Tipo_trabajo } = req.body
+    const { Rut } = req.body.rut
     console.log(Rut)
+    console.log(Nombre)
+    console.log(Apellido)
     let sql = `UPDATE empleado SET Nombre = '${Nombre}', Apellido = '${Apellido}', Direccion = '${Direccion}', Telefono = '${Telefono}', Sueldo = '${Sueldo}', Antiguedad = '${Antiguedad}', Tipo_trabajo = '${Tipo_trabajo}' WHERE Rut = '${Rut}';`
     conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
         if (err) throw err;
@@ -67,33 +70,6 @@ router.post('/Rut', (req, res) => {
         }
     })
 })
-// Modificar un dato de la tabla tipo_piedra(UPDATE):
-// router.put('/:id', async (req, res) => {
-//     // ILL UPDATE THIS WHENEVER THIS WORKS !!!!
-//     try {
-//         const { id } = req.params;
-//         const body = await req.body;
-
-//         console.log(id)
-//         console.log(req.body)
-
-//     } catch (error) {
-//         console.error('Error ' + error)
-//     }
-
-
-//     // const { id } = req.params;
-//     // console.log(req.body);
-//     // let sql = `UPDATE tipo_piedra
-//     //             SET nombre_piedra = ${Dato.nombre_piedra}
-//     //             WHERE id_tipo_piedra = ${id};`
-//     // conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
-//     //     if (err) throw err;
-//     //     else {
-//     //         res.json({ status: 'Tabla modificada exitosamente!' })
-//     //     }
-//     // })
-// });
 
 //Exportar la ruta:
 module.exports = router;

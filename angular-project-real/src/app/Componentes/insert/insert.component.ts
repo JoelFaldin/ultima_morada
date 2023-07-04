@@ -20,7 +20,7 @@ export class InsertComponent implements OnInit {
     Tipo_trabajo: ''
   };
 
-  constructor( private Srv1Service:Srv1Service, private Router:Router) { }
+  constructor( private Srv1Service: Srv1Service, private Router: Router) { }
 
   ngOnInit(): void {
   }
