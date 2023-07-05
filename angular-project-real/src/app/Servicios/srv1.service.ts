@@ -30,8 +30,8 @@ export class Srv1Service {
   }
 
   //Modificar dato
-  editDato(Rut: string, Empleado: any){
-    return this.http.put(Rut, Empleado);
+  editDato(Empleado: any){
+    return this.http.put(this.url, Empleado)
   }
 
 }

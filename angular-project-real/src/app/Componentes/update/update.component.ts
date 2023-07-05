@@ -25,29 +25,16 @@ export class UpdateComponent implements OnInit {
                private activeRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
-  // El codigo que iba aca me obstaculizaba la obtencion de datos en rutas. ts
-  // const rut_entrada = <string> this.activeRoute.snapshot.params['id'];
-  // console.log("Rut de entrada: " + rut_entrada);
-
+    const rut_entrada = <string> this.activeRoute.snapshot.params['rut'];
+    console.log('rut de entrada: ' + rut_entrada);
 }
 
   update1() {
-    const rut_entrada = <string> this.activeRoute.snapshot.params['id'];
-    console.log("Rut de entrada: " + rut_entrada);
-    this.Srv1Service.editDato(rut_entrada, this.datos).subscribe();
+    const rut_1 = <string> this.activeRoute.snapshot.params['rut'];
+    this.datos.Rut = rut_1;
+    console.log(rut_1)
+
+    this.Srv1Service.editDato(this.datos).subscribe();
     this.Router.navigate(['/home']);
   }
-
-  // update() {
-  //   const id_entrada = <string> this.activeRoute.snapshot.params['id'];
-  //   this.Srv1Service.editDato(id_entrada, this.datos).subscribe(
-  //     res => {
-  //       console.log(res);
-  //       this.Router.navigate(['/home'])
-  //     },
-  //     err => {
-  //       console.log(err);
-  //     }
-  //   )
-  // }
 }
