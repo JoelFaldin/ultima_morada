@@ -34,7 +34,6 @@ app.listen(port, (error?: Error) => {
 
 //Para iniciar el server con la db conectada, posicionarse en:
 //C:\Users\Usuario\Desktop\html-css\angular-project\server\src>
-//Luego hacer un npm run dev (ahora si funciona :D cambie una ruta en el package.json)
 
 //Al iniciar angular con ng serve -o, la direccion del localhost es 4200.
 //Usar http://localhost:3000/api/?
@@ -42,6 +41,8 @@ app.listen(port, (error?: Error) => {
 //Para instalar las dependencias, posicionarse en /server
 //npm i --save-dev nodemon
 //npm i express mysql
+//npm i --save-dev ts-node
 
 //Ademas de las dependencias, hacer un:
 //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+

@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     })
 })
 
-//Listar un tipo de piedra (segun su id):
+//Listar un tipo de empleado (segun su rut):
 router.get('/:rut', (req, res) => {
     const { rut } = req.params
     let sql = `SELECT * FROM empleado WHERE Rut = ${rut}`

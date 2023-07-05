@@ -14,8 +14,9 @@ connection.connect((error) => {
         console.log('hubo un error: ', error)
     }
     else {
-        console.log('db conectada!')
+        console.log('Base de datos conectada!')
     }
 })
 
 export default connection;
+
