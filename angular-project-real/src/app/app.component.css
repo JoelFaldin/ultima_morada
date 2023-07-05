@@ -36,9 +36,16 @@ a {
 
 /* Efecto de pasar el mouse sobre cada elemento del navbar. */
 /* Se puede cambiar el color de las letras facilmente. */
-.header a:hover {
-  color: #007399;
-}
 .header .page-name:hover {
   color: #1ac6ff;
+}
+.header #update-btn:hover {
+  background-color: limegreen;
+}
+
+#update-btn {
+  padding: 0 15px 0 15px;
+  color: black;
+  background-color: chartreuse;
+  border-radius: 5px;
 }

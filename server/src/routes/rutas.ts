@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
     conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
         if (err) throw err;
         else {
-            res.json({ status: 'Tipo de  piedra agregada!' })
+            res.json({ status: 'Emplead@ ' + Nombre + ' agregado!!' })
         }
     })
 })
@@ -50,7 +50,7 @@ router.delete('/:RUT', (req, res) => {
     conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
         if (err) throw err;
         else {
-            res.json({ status: 'Equipo eliminado!' })
+            res.json({ status: 'Empleado eliminado.' })
         }
     })
 })
@@ -58,43 +58,14 @@ router.delete('/:RUT', (req, res) => {
 // Modificar un dato de la tabla empelado (UPDATE):
 router.put('/', (req, res) => {
     const { Rut, Nombre, Apellido, Direccion, Telefono, Sueldo, Antiguedad, Tipo_trabajo } = req.body
-    console.log(Rut)
-    console.log(Nombre)
     let sql = `UPDATE empleado SET Nombre = '${Nombre}', Apellido = '${Apellido}', Direccion = '${Direccion}', Telefono = '${Telefono}', Sueldo = '${Sueldo}', Antiguedad = '${Antiguedad}', Tipo_trabajo = '${Tipo_trabajo}' WHERE Rut = '${Rut}';`
     conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
         if (err) throw err;
         else {
-            res.json({ status: 'Tipo de  piedra agregada!' })
+            res.json({ status: 'Datos de ' + Nombre + ' actualizados!' })
         }
     })
 })
-// Modificar un dato de la tabla tipo_piedra(UPDATE):
-// router.put('/:id', async (req, res) => {
-//     // ILL UPDATE THIS WHENEVER THIS WORKS !!!!
-//     try {
-//         const { id } = req.params;
-//         const body = await req.body;
-
-//         console.log(id)
-//         console.log(req.body)
-
-//     } catch (error) {
-//         console.error('Error ' + error)
-//     }
-
-
-//     // const { id } = req.params;
-//     // console.log(req.body);
-//     // let sql = `UPDATE tipo_piedra
-//     //             SET nombre_piedra = ${Dato.nombre_piedra}
-//     //             WHERE id_tipo_piedra = ${id};`
-//     // conexion.query(sql, (err: mysql.MysqlError | null, rows?: any, fields?: mysql.FieldInfo[]) => {
-//     //     if (err) throw err;
-//     //     else {
-//     //         res.json({ status: 'Tabla modificada exitosamente!' })
-//     //     }
-//     // })
-// });
 
 //Exportar la ruta:
 module.exports = router;
